@@ -1,0 +1,798 @@
+/* body > #root > div {
+  height: 100vh;
+} */
+/* animation colors: pink #9b3658, dark grey #282c34 */
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal; font-variant: normal;
+}
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+text {
+  color: white;
+}
+
+
+.app {
+  background-color: #272C34;
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.page {
+  background: linear-gradient(55deg, #dc3b22, #fd0363);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 5s ease infinite;
+  -moz-animation: AnimationName 5s ease infinite;
+  animation: AnimationName 5s ease infinite;
+}
+.first-section {
+  height: 100vh;
+  position: relative;
+  padding-top: 5vh;
+}
+
+.hover-box {
+  display: block;
+  width: 50vw;
+  height: 30vw;
+  font-size: 5vw;
+  padding: 5vw;
+  color: #86888C;
+  /* background-color: white; */
+  border: none;
+  border-radius: 2vw;
+  transition: 0.2rem 0.8rem 1.6rem 300ms;
+  resize: none;
+  overflow: visible;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vw;
+  transform: translateY(-35vw) rotate(4.5deg);
+  z-index:5;
+}
+
+.hover-box:hover>.display-card-with-title {
+  transform: translateX(100vw) translateY(-300px) rotate(90deg);
+}
+.display-card-with-title {
+  display: block;
+  width: 50vw;
+  height: 30vw;
+  font-size: 5vw;
+  padding: 5vw;
+  color: #1D2126;
+  background-color: white;
+  border: none;
+  border-radius: 2vw;
+  resize: none;
+  overflow: auto;
+  font-size: 5vw;
+  font-weight: 800;
+  color: #86888C;
+  line-height: 1.1;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vw;
+  transform: translate(-10%, -33%);
+  z-index:5;
+  transition: transform 1.5s;
+
+
+ box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+
+}
+.display-card-with-slogan{
+  display: block;
+  width: 50vw;
+  height: 30vw;
+  font-size: 5vw;
+  padding: 5vw;
+  color: #86888C;
+  background-color: white;
+  border: none;
+  border-radius: 2vw;
+  transition: 0.2rem 0.8rem 1.6rem 300ms;
+  resize: none;
+  overflow: auto;
+  font-size: 5vw;
+  font-weight: 800;
+  color: #86888C;
+  line-height: 1.1;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5vw;
+  transform: translateY(4vw) rotate(-8deg);
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+
+}
+.signupbutton {
+  position: absolute;
+  background-image: url(/googlelogo2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -120px;
+  width: 240px;
+  height: 60px;
+  cursor: pointer;
+}
+.signupbutton a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.title {
+  font-size: 6vw;
+  font-weight: 800;
+  color: #292C33;
+  line-height: 1.1;
+}
+.second-section {
+  padding: 7vw;
+  position: center;
+  color: white;
+  /* margin-left: auto;
+  margin-right: auto; */
+  background-color: #3B4757;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.section-text{
+  font-size: 1.4vh;
+
+}
+
+.section-header {
+  font-size: 1.6vh;
+  font-weight: 600;
+  margin-bottom: 2vw;
+  text-align: center;
+}
+.footer {
+  font-size: 10px;
+  color: white;
+  padding:2vw;
+  text-align: right;
+  position: bottom;
+}
+.centering {
+  text-align:left;
+  margin: 0 auto;
+  position: center;
+}
+.column-padding {
+  padding: 2vw;
+}
+
+.navbar-nav {
+  flex-direction: row!important;
+}
+.navbar .nav-item {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background: linear-gradient(109deg, #953556, #46264c);
+background-size: 400% 400%;
+
+-webkit-animation: AnimationName 30s ease infinite;
+-moz-animation: AnimationName 30s ease infinite;
+animation: AnimationName 30s ease infinite;
+}
+
+.center{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.game-tracker {
+  padding-right: 3vw;
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: auto;
+}
+.actualteamname {
+  font-weight:400;
+}
+/* PROMPTING input */
+.prompt {
+  text-align: center;
+}
+.prompting, .vote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px;
+}
+.promptText, .input-text, .inputCard {
+  font-size: 5vw;
+  font-weight: 800;
+  color: #86888C;
+  line-height: 1.1;
+}
+.prompting form {
+  position: relative;
+  overflow: auto;
+}
+.prompting textarea, .inputCard {
+  display: block;
+  width: 50vw;
+  height: 30vw;
+  font-size: 5vw;
+  padding: 5vw;
+  margin: 60px 0 90px 0;
+  color: #86888C;
+  background-color: white;
+  border: none;
+  border-radius: 2vw;
+  transition: 0.2rem 0.8rem 1.6rem 300ms;
+  resize: none;
+  overflow: auto;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+}
+
+.prompting .send-button {
+  right: 0;
+  bottom: 0;
+  background-image: url(/send-icon.svg);
+  background-position: 12px center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
+.floating-button {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: white;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  border: none;
+}
+
+.input-text::placeholder {
+  color: #86888C;
+  font-weight: 600;
+}
+
+.input-text:focus {
+  outline: none;
+  box-shadow: 0.2rem 0.8rem 1.6rem #9b3658;
+}
+
+/* VOTE */
+.vote {
+  /* overflow: hidden; */
+}
+.vote .cardHolder {
+  position: relative;
+  width: 50vw;
+  height: 30vw;
+  margin: 60px 0;
+}
+.vote .cardHolder .inputCard {
+  position: absolute;
+  hyphens: auto;
+  top: 0;
+  left: 0;
+  transition: transform 0.4s;
+}
+.vote .cardHolder .inputCard.offscreen {
+  transform: translateX(100vw) translateY(-300px) rotate(90deg) !important;
+}
+.vote .cardHolder .inputCard.hasfocus {
+  transform: translateX(0) translateY(-40px) rotate(0) !important;
+}
+
+.vote .btn-prev {
+  top: 15vw;
+  left: calc(-50% + 11vw);
+}
+.vote .btn-next {
+  top: 15vw;
+  right: calc(-50% + 11vw);
+}
+.vote .btn-vote {
+  top: 34vw;
+  right: calc(-50% + 11vw);
+  font-size: 35px;
+}
+.vote .scroll-button-flipped {
+  transform: scaleX(-1);
+  background-image: url(/arrow-icon.svg);
+  opacity: 0.75;
+  background-position: 14px center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+.vote .scroll-button {
+  opacity: 0.75;
+  background-image: url(/arrow-icon.svg);
+  background-position: 14px center;
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+
+/* JOINING */
+.joined-players {
+  font-size: 25px;
+    font-weight: 800;
+    color: #86888C;
+    line-height: 1.1;
+    display: block;
+    margin: 80px 0 25px 0;
+
+}
+/* .one-joiner {
+  text-align: center;
+  justify-content: center;
+} */
+.joining img {
+  border: solid 10px #9b3658;
+  border-radius: 55px;
+  margin: 0 -10px;
+  height: 110px;
+  width: 110px;
+}
+.joiners {
+  color: white;
+  display: block;
+  font-size: 25px;
+  font-weight: 800;
+  margin: 20px 0 10px 0;
+  /* text-align: center; */
+}
+
+.row {
+  height: 100%;
+}
+.joining .col-sm-5, .joining .col-sm-7 {
+  padding-top: 60px;
+}
+.joining .col-sm-5 {
+  padding-left: 60px;
+}
+.col-sm-5.start-game {
+  padding: 60px;
+}
+
+.roomid {
+  color: white;
+    display: block;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+form.inlineForm {
+  display: inline;
+}
+.teamname-input {
+    background: none;
+    border: none;
+    color: white;
+    outline: none !important;
+    display: inline;
+        width: 270px;
+}
+.teamname-input:focus {
+  border-bottom: 1.5px solid #F8F9FA;
+  margin-left: .3em;
+  width: 200px;
+}
+
+.teamname {
+  font-size: 48px;
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 35px;
+}
+.your-team {
+      font-size: 25px;
+  font-weight: 800;
+  color: #86888C;
+  line-height: 1.1;
+}
+
+.profile-totalvotes {
+  font-size: 25px;
+font-weight: 800;
+color: #86888C;
+line-height: 1.1;
+}
+
+.profile-header {
+  background-color: #282c34;
+  padding: 0 60px;
+  background: linear-gradient(109deg, #953556, #46264c);
+background-size: 400% 400%;
+
+-webkit-animation: AnimationName 30s ease infinite;
+-moz-animation: AnimationName 30s ease infinite;
+animation: AnimationName 30s ease infinite;
+
+}
+.profile-header .col-sm-4, .profile-header .col-sm-8 {
+  margin: 60px 0;
+}
+.profile-header .welcome {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+.profile-header .stats {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+.play-column .item {
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.profile-body {
+  background-color: #1D2126;
+  width: 100%;
+  padding: 60px;
+  height: 80%;
+  display: flex;
+  overflow-x: auto;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.players-in-game {
+  font-size: 12px;
+  font-family: "Helvetica Neue";
+  font-style: italic;
+  color: #1D2126;
+  font-weight: 400;
+  margin: 5px 0 5px 0;
+  line-height: 1.15;
+}
+
+.current-game-card {
+  background-color: #F8F9FA;
+  position: relative;
+  min-width: 200px;
+  min-height: 250px;
+  max-width: 200px;
+  max-height: 250px;
+  margin-right: 20px;
+  padding: 20px;
+  cursor: pointer;
+  overflow-x: auto;
+  line-height: 1.02;
+  word-wrap: break-word;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.current-game-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transform: scale(1.25);
+  z-index: 5;
+}
+
+.signupbutton {
+  padding-left: 20px;
+}
+
+.usericon {
+  border-radius: 25px;
+}
+
+.divider {
+  background-color: #1D2126;
+    padding: 60px 60px 0 60px;
+    /* padding-top: 40px; */
+    /* padding-bottom: 5px; */
+    overflow: auto;
+}
+.team {
+  font-size: 18px;
+  font-family: "Helvetica Neue";
+  color: #282c34;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+.theteamname{
+  font-size: 30px;
+  color: #282c34;
+  font-weight: 700;
+}
+
+.emoji{
+  font-size: 21px;
+  margin-bottom: 5px;
+  font-weight: 800;
+}
+
+.roundnumber{
+  font-size: 15px;
+  margin-bottom: 13px;
+  color: #282c34;
+  font-weight: 800;
+}
+.leaderName {
+  font-size: 15px;
+  margin-bottom: 13px;
+  color: #282c34;
+  font-weight: 600;
+  line-height: 1.05;
+}
+.points {
+  font-size: 15px;
+  margin-bottom: 13px;
+  color: #282c34;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.no-room-code {
+  font-size: 24px;
+  color: white;
+  padding: 60px;
+}
+
+.playButton{
+  cursor: pointer;
+  background-color: white;
+  border-radius: 8px;
+  color: #272C34;
+  padding: 10px;
+  font-weight: 505;
+  font-size: 16px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+
+}
+.playButton:hover{
+  background-color: white;
+  border-radius: 8px;
+  color: #272C34;
+  padding: 10px;
+  font-weight: 505;
+  font-size: 16px;
+  border-bottom: none;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+-webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+-moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+-ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+-o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.cardbottom {
+  position:absolute;
+  bottom: 25px;
+
+}
+
+.waitingComponent {
+  padding-top: 100px;
+  text-align: center;
+}
+.waitingComponent img {
+  border-radius: 55px;
+  margin: 10px 30px;
+  border: solid 10px #F8F9FA;
+  height: 110px;
+  width: 110px;
+}
+.waitingComponent img.ready {
+  border-color: #9b3658;
+}
+.waitingComponent p {
+  font-size: 24px;
+  font-weight: 800;
+  color: #86888C;
+  line-height: 1.1;
+  margin: 12vw 5vw 10vw 5vw;
+}
+
+.instructions{
+  font-size: 40px;
+font-weight: 800;
+color: white;
+line-height: 1.1;
+}
+
+/*Leaderboard*/
+.leaderboard-page {
+  padding: 20px;
+}
+.all-cards {
+  display:flex;
+  overflow: auto;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+}
+.leaderboard-prompt {
+  font-size: 32px;
+font-weight: 800;
+color: #86888C;
+line-height: 1.1;
+padding: 40px;
+text-align: center;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 15%}
+    50%{background-position:100% 86%}
+    100%{background-position:0% 15%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 15%}
+    50%{background-position:100% 86%}
+    100%{background-position:0% 15%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 15%}
+    50%{background-position:100% 86%}
+    100%{background-position:0% 15%}
+}
+
+.top-bar {
+  background-color: #1D2126;
+  display: flex;
+  border-radius: 20px;
+  margin: 15px;
+  color: #F8F9FA;
+  font-size: 16px;
+  font-weight: 350;
+  color: white;
+  line-height: 1.1;
+  padding: 20px 0px 20px 40px;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+
+  background: linear-gradient(119deg, #282c34, #9b3658);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 18s ease infinite;
+  -moz-animation: AnimationName 18s ease infinite;
+  animation: AnimationName 18s ease infinite;
+}
+.votess {
+  font-weight:400px;
+  font-size: 24px;
+}
+.card {
+  background-color: #F8F9FA;
+  /* position: relative; */
+  max-width: 360px;
+  width: 30vw;
+  min-width: 310px;
+  padding: 1px;
+  margin: 0 0 30px 0;
+  /* background: linear-gradient(to bottom right, #EDEDEC 10%, white 50%); */
+  border: none;
+  border-radius: 25px;
+  transition: 0.2rem 0.8rem 1.6rem 300ms;
+  box-shadow: 15px 15px 30px rgba(0,0,0,0.5);
+}
+.by {
+  font-size: 30px;
+font-weight: 700;
+padding-top: 18px;
+padding-left: 30px;
+}
+
+.votesfor {
+  display: inline-flex;
+  font-size: 14px;
+  margin: 0 0 40px 0;
+}
+
+.totalp {
+
+  position: relative;
+font-size: 15px;
+font-weight: 500;
+padding-left: 94px;
+margin-right: 6px;
+}
+.numhottakes {
+  font-size: 15px;
+  font-weight: 500;
+}
+.nexthottake {
+  margin-left: 20px;
+}
+
+.numVotesThisRound {
+  border-radius: 50px;
+  padding-top: 6px;
+  padding-left: 13px;
+  padding-right: 9px;
+  padding-bottom: 8px;
+  top: 13px;
+  right: 14px;
+  position: absolute;
+  background-color: #1D2126;
+  font-weight: 500;
+  font-size: 23px;
+  color: #F8F9FA;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.5)
+}
+
+.quote {
+  margin-top: -30px;
+      font-size: 23px;
+      font-weight: 800;
+      margin-left: 30px;
+      /* flex-wrap: wrap; */
+      /* overflow-wrap: break-word; */
+      /* word-wrap: break-word; */
+      max-width: 320px;
+      line-height: 1.2;
+}
+.usersname {
+  margin-left: 5px;
+}
+.totalVotes {
+  font-size: 15px;
+}
+
+.usericon-small {
+  border-radius: 25px;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.votedusername {
+  font-weight: 450px;
+}
+
+.row-here {
+  height: 60px;
+}
+
+.votesfor {
+  margin-left: 20px;
+  margin-right: 1px;
+  margin-top: 20px;
+}
+
+h1 { color: white; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
+h2 {color: white; padding: 20px;}
+h3 { color: white;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; }
+h4{padding-top: 10px; padding-left: 20px;}
+p { color: white;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 20px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; }
+h5 {padding: 60px;color: #86888C; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 50px; font-style: normal; font-variant: normal; font-weight: 850; line-height: 26.4px;}
