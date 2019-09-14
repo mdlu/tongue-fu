@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <button id="record" onclick="record()">Record Audio</button>
+        <a id="download">Download</a>
+
+        <p id="output"></p>
+
+        <script>
+
+            function print(stuff){
+                let el = document.getElementById("output");
+                el.innerHTML = el.textContent + " \\ " + stuff;
+            }
+
+            const recordButton = document.getElementById("record");
+            let stream = null;
+
+            function record(){
+                print("beginning");
+                const mediaRecorder = new MediaRecorder(stream);
+                mediaRecorder.start();
+
+                const audioChunks = [];
+
+                mediaRecorder.addEventListener("dataavailable", event => {
+                    audioChunks.push(event.data);
+                });
+
+                mediaRecorder.addEventListener("stop", () => {
+                    print("stopping");
+                    const audioBlob = new Blob(audioChunks, {type: 'audio/webm'});
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    //createAudioElement(audioUrl);
+                    const down = document.getElementById("download");
+                    down.href = audioUrl;
+                    down.download = "test_audio.webm";
+                });
+
+                setTimeout(() => {
+                mediaRecorder.stop();
+                }, 3000);
+            }
+
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stre => {
+                    stream = stre;
+                });
+
+        </script>
+
+
+    </body>
+</html>
