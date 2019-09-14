@@ -16,3 +16,8 @@ def get_transcript(audio_fpath):
             time.sleep(1)
     else:
         return "Operation timed out"
+
+# TODO: Test bytes_to_wav
+def bytes_to_wav(bfile,fname):
+    with open("%s.wav" % (fname), mode = 'bx+') as f:
+        f.write(bfile)
