@@ -35,7 +35,7 @@ class Prompting extends React.Component {
   render() {
     return (this.waitingOnUser(this.props.userInfo._id) ? (
       <div>
-      <div className = "top-bar">Shoot your hottest shot 💦 <span className="game-tracker">Team <span className="actualteamname">{this.props.game.teamname}</span>  |  Round 🎯<span className="actualteamname">{this.props.game.roundnumber}</span></span></div>
+      <div className = "top-bar">Can you conquer inconstant consontants quickly? <span className="game-tracker">Team <span className="actualteamname">{this.props.game.teamname}</span>  |  Round 🎯<span className="actualteamname">{this.props.game.roundnumber}</span></span></div>
         <div className="prompting">
           <Prompt promptText={this.props.game.currentprompt}/>
           <Input onSubmit={this.submit}/>
@@ -43,11 +43,11 @@ class Prompting extends React.Component {
       </div>
     ) : (
       <div>
-      <div className = "top-bar">Waiting on delinquents 🤦‍♀️...<span className="game-tracker">Team <span className="actualteamname">{this.props.game.teamname}</span>  |  Round 🎯<span className="actualteamname">{this.props.game.roundnumber}</span></span></div>
+      <div className = "top-bar">Some slow slimes still sounding slippery syllables...<span className="game-tracker">Team <span className="actualteamname">{this.props.game.teamname}</span>  |  Round 🎯<span className="actualteamname">{this.props.game.roundnumber}</span></span></div>
       <Waiting
         users={this.props.users}
         waitingOnUser={this.waitingOnUser}
-        message="Now that's a hot take! Waiting for your friends to come up with the funny stuff..."
+        message="Waiting for others... Will you be the Tongue Fu Master?"
       />
       </div>
     ));

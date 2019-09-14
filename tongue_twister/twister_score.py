@@ -2,6 +2,8 @@ import pyphen
 import re
 import math
 
+# Look into https://github.com/bootphon/phonemizer
+
 def score(text):
     dic = pyphen.Pyphen(lang='en')
     syllables = []
