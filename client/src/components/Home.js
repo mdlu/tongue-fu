@@ -10,6 +10,11 @@ class Home extends Component {
       // currentPage:"home"
     };
   }
+
+  componentDidMount() {
+    // const { history } = this.props;
+    // history.push("/thePath");
+  }
 //
   render () {
     return (
@@ -17,11 +22,11 @@ class Home extends Component {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
         <div className="first-section">
           <div className="display-card-with-slogan">
-           <h1 className="title">A game to shoot the sh*t.</h1>
+           <h1 className="slogan">Tussles till tongues twists, turns, twit and twat.</h1>
           </div>
           <div className="hover-box">
           <div className="display-card-with-title">
-           <h1 className="title">Welcome to HotTake.🔥</h1>
+           <h1 className="title">Tongue Fu 😛</h1>
           </div>
           </div>
           <div className="signupbutton">
@@ -50,7 +55,7 @@ class Home extends Component {
         </div>
 
         <div className="footer">
-          <span>&copy; WebLab MIT 2019. All Rights Reserved.</span>
+          <span>&copy; HackMIT 2019. All Rights Reserved.</span>
         </div>
       </div>
     );

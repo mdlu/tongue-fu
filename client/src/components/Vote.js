@@ -78,7 +78,7 @@ class Vote extends React.Component {
               </div>
             ))}
             <button className="floating-button btn-prev scroll-button-flipped" onClick={this.prev}></button>
-            <button className="floating-button btn-vote" onClick={this.vote}>🔥</button>
+            <button className="floating-button btn-vote" onClick={this.vote}>😛</button>
             <button className="floating-button btn-next scroll-button" onClick={this.next}></button>
           </div>
         </div>

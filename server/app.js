@@ -46,10 +46,13 @@ app.get(
   '/auth/google/callback',
   passport.authenticate(
     'google',
-    { failureRedirect: '/login' }
+    {
+      successRedirect: '/profile',
+      failureRedirect: '/login'
+    }
   ),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/profile');
   }
 );
 

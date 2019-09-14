@@ -16,6 +16,8 @@ class Profile extends Component {
     // console.log(this.props.userInfo.totalscore);
     // console.log(this.props.userInfo.currentgames.length);
     this.props.refreshUser();
+    
+    console.log(this.state);
   }
 
   createNewGame = ()=> {
@@ -54,7 +56,7 @@ class Profile extends Component {
           <div className="row">
           <div className="col-sm-8">
             <div className="welcome">Welcome, {this.props.userInfo.name}</div>
-            <div className="stats">Games 🎯{this.props.userInfo.currentrooms.length} | Score 🔥{this.props.userInfo.totalscore}</div>
+            <div className="stats">Games 🎯{this.props.userInfo.currentrooms.length} | Score 😛{this.props.userInfo.totalscore}</div>
           </div>
 
           <div className="col-sm-4 play-column">

@@ -11,9 +11,7 @@ class NavBar extends Component {
     render() {
         return (
           <nav className="navbar navbar-light bg-light">
-            <div className="navbar-brand">
-            HotTake.
-            </div>
+            <Link to="/" className="navbar-brand nav-link">Tongue Fu</Link>
             <div className="navbar-nav">
                 { this.props.userInfo === null ? (
                   <React.Fragment>

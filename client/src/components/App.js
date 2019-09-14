@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "../css/app.css";
+import Redirect from "react-router-dom/es/Redirect";
 import Route from "react-router-dom/es/Route";
 import Switch from "react-router-dom/es/Switch";
 import {withRouter} from "react-router-dom";
@@ -19,7 +20,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-      this.getUser();
+    console.log(this.state);
+    this.getUser();
   }
 
 
@@ -31,6 +33,9 @@ class App extends React.Component {
 
         <Switch>
           <Route exact path="/" render={(props) => (
+            <Home/>
+          )}/>
+          <Route exact path="/profile" render={(props) => (
             this.state.userInfo ? (
               <Profile {...props}
                 userInfo={this.state.userInfo}

@@ -58,7 +58,7 @@ text {
   margin-right: auto;
   margin-top: 5vw;
   transform: translateY(-35vw) rotate(4.5deg);
-  z-index:5;
+  z-index:6;
 }
 
 .hover-box:hover>.display-card-with-title {
@@ -103,7 +103,7 @@ text {
   border-radius: 2vw;
   transition: 0.2rem 0.8rem 1.6rem 300ms;
   resize: none;
-  overflow: auto;
+  overflow: hidden;
   font-size: 5vw;
   font-weight: 800;
   color: #86888C;
@@ -137,6 +137,12 @@ text {
   font-weight: 800;
   color: #292C33;
   line-height: 1.1;
+}
+.slogan {
+  font-size: 5vw;
+  font-weight: 800;
+  color: #292C33;
+  line-height: 1;
 }
 .second-section {
   padding: 7vw;
