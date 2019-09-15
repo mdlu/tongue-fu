@@ -147,6 +147,23 @@ text {
   width: 100%;
   height: 100%;
 }
+.goprofilebutton {
+  position: absolute;
+  background-color: #F8F9FA;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -120px;
+  width: 240px;
+  height: 60px;
+  cursor: pointer;
+}
+.goprofilebutton a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .title {
   font-size: 6vw;
   font-weight: 800;
