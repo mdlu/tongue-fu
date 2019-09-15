@@ -11,9 +11,12 @@ const RoomModelSchema = new mongoose.Schema({
   currentprompt: String,
   seenprompts: [String], //list of ids of seen prompts
   users: [{type: mongoose.Schema.Types.ObjectId, ref:"UserModel"}],
-  inputs: {type: Map, of: String},
-  votesFor: {type: Map, of: String},
-  score: {type: Map, of: Number},
+  inputs: {type: Map, of: String}, // DEPRECATED
+  revResults: {type: Map, of: String},
+  votesFor: {type: Map, of: String}, // DEPRECATED
+  scoreMap: {type: Map, of: Number},
+  score: {type: Map, of: Number}, // DEPRECATED
+  totalScore: {type: Map, of: Number},
   gamestate: Number,
   roundnumber: Number
 });

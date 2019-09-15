@@ -24,6 +24,18 @@ class Prompting extends React.Component {
     });
   }
 
+  dataSubmitV2 = (input) => {
+    fetch('/api/game/'+this.props.game.roomid+'/input', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        'input': input
+      })
+    });
+  }
+
   waitingOnUser = (userid)=>{
     return !(userid in this.props.game.inputs);
   }

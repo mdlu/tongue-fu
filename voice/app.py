@@ -13,7 +13,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/score', methods=['GET', 'POST'])
 @cross_origin()
-def home():
+def scoring():
     if request.method == 'GET':
         return 
     else:
@@ -33,7 +33,7 @@ def home():
             compare = twister_score.compare(orig, stripped_ts)
             # a = int(twister_score.compare(orig, sample) * twister_score.score(orig) * 10) # multiplies accuracy by the difficulty of the tongue twister, and scales by 10
             return json.dumps({"ts": ts, "stripped_ts": stripped_ts, "compare": compare, "orig_score": orig_score})
-            
+
 
 @app.route('/', methods=['GET', 'POST'])
 @cross_origin()
@@ -46,6 +46,8 @@ def home():
             filename = secure_filename(file.filename)
             path = os.path.join(app.config['UPLOAD_FOLDER'], filename) # path to audio file
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename)) # saves locally
+
+            a = get_transcript(path)
             return json.dumps(a)
 
 

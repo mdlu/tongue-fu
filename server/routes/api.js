@@ -51,9 +51,12 @@ router.post('/newroom', (req,res) => {
     currentprompt: "",
     seenprompts: [], //list of ids of seen prompts
     users: [],
-    inputs: {},
-    votesFor: {},
-    score: {},
+    inputs: {}, // DEPRECATED
+    revResults: {},
+    votesFor: {}, // DEPRECATED
+    scoreMap: {},
+    score: {}, // DEPRECATED
+    totalScore: {},
     gamestate: game.STATE_JOINING,
     roundnumber: 1
   });
@@ -159,7 +162,8 @@ router.post('/game/:roomid/input', (req, res) => { //this
     }
   })
   if (allUsersSubmittedInput) {
-    req.room.gamestate = game.STATE_VOTE;
+    // req.room.gamestate = game.STATE_VOTE;
+    req.room.gamestate = game.STATE_LEADERBOARD;
   }
 
   req.room.save(function(err, room) {
