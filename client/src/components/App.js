@@ -8,7 +8,7 @@ import Game from "./Game";
 import Profile from "./Profile";
 import NavBar from "./NavBar";
 import Home from "./Home";
-const API_ENDPOINT_START = 'https://tonguefu.herokuapp.com/';
+const API_ENDPOINT_START = 'https://tonguefu2.herokuapp.com/';
 
 class App extends React.Component {
 
