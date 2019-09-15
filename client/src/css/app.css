@@ -21,14 +21,20 @@ text {
 
 
 .app {
-  background-color: #272C34;
+  background: linear-gradient( cyan, magenta);
   height: 100%;
   min-height: 100vh;
   overflow: hidden;
+
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 5s ease infinite;
+  -moz-animation: AnimationName 5s ease infinite;
+  animation: AnimationName 5s ease infinite;
+
 }
 
 .page {
-  background: linear-gradient(55deg, #dc3b22, #fd0363);
+  background: linear-gradient( cyan, magenta);
   background-size: 600% 600%;
 
   -webkit-animation: AnimationName 5s ease infinite;
@@ -48,7 +54,6 @@ text {
   font-size: 5vw;
   padding: 5vw;
   color: #86888C;
-  /* background-color: white; */
   border: none;
   border-radius: 2vw;
   transition: 0.2rem 0.8rem 1.6rem 300ms;
@@ -57,12 +62,22 @@ text {
   margin-left: auto;
   margin-right: auto;
   margin-top: 5vw;
-  transform: translateY(-35vw) rotate(4.5deg);
   z-index:6;
 }
 
+.circle{border:1px solid black;border-radius:50%;width:33%;float:left;margin:0;padding:0;}
+.row{clear:left;}
+.circle{padding-top:33%;}
+
+#twister {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
 .hover-box:hover>.display-card-with-title {
-  transform: translateX(100vw) translateY(-300px) rotate(90deg);
+  /* transform: translateX(100vw) translateY(-300px) rotate(90deg); */
+  /* display: none; */
 }
 .display-card-with-title {
   display: block;
@@ -70,15 +85,15 @@ text {
   height: 30vw;
   font-size: 5vw;
   padding: 5vw;
-  color: #1D2126;
-  background-color: white;
-  border: none;
-  border-radius: 2vw;
+  /* color: #1D2126; */
+  /* background-color: white; */
+  /* border: none; */
+  /* border-radius: 2vw; */
   resize: none;
   overflow: auto;
   font-size: 5vw;
   font-weight: 800;
-  color: #86888C;
+  /* color: #86888C; */
   line-height: 1.1;
   margin-left: auto;
   margin-right: auto;
@@ -88,7 +103,7 @@ text {
   transition: transform 1.5s;
 
 
- box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+ /* box-shadow: 10px 10px 30px rgba(0,0,0,0.5); */
 
 }
 .display-card-with-slogan{
@@ -97,21 +112,21 @@ text {
   height: 30vw;
   font-size: 5vw;
   padding: 5vw;
-  color: #86888C;
-  background-color: white;
-  border: none;
-  border-radius: 2vw;
+  /* color: #86888C; */
+  /* background-color: white; */
+  /* border: none; */
+  /* border-radius: 2vw; */
   transition: 0.2rem 0.8rem 1.6rem 300ms;
   resize: none;
   overflow: hidden;
   font-size: 5vw;
   font-weight: 800;
-  color: #86888C;
   line-height: 1.1;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5vw;
-  transform: translateY(4vw) rotate(-8deg);
+  /* transform: translateY(4vw) rotate(-8deg); */
+  /* transform: translateY(4vw); */
   box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
 
 }
@@ -136,28 +151,26 @@ text {
   font-size: 6vw;
   font-weight: 800;
   color: #292C33;
-  line-height: 1.1;
+  line-height: 1.5;
+  text-align: center;
 }
 .slogan {
-  font-size: 5vw;
+  font-size: 4vw;
   font-weight: 800;
   color: #292C33;
   line-height: 1;
+  text-align: center;
 }
 .second-section {
   padding: 7vw;
   position: center;
   color: white;
-  /* margin-left: auto;
-  margin-right: auto; */
   background-color: #3B4757;
-  /* margin-left: auto;
-  margin-right: auto; */
 }
 
 .section-text{
   font-size: 1.4vh;
-
+  text-align: center;
 }
 
 .section-header {
@@ -233,6 +246,12 @@ animation: AnimationName 30s ease infinite;
   font-weight:400;
 }
 /* PROMPTING input */
+
+#record {
+  margin: 4vh;
+  font-size: 4vh;
+}
+
 .prompt {
   text-align: center;
 }
@@ -243,9 +262,10 @@ animation: AnimationName 30s ease infinite;
   margin: 60px;
 }
 .promptText, .input-text, .inputCard {
-  font-size: 5vw;
+  font-size: 8vw;
   font-weight: 800;
-  color: #86888C;
+  /* color: #86888C; */
+  color: black;
   line-height: 1.1;
 }
 .prompting form {
