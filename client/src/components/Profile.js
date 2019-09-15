@@ -15,9 +15,7 @@ class Profile extends Component {
     // console.log(this.props.userInfo.name);
     // console.log(this.props.userInfo.totalscore);
     // console.log(this.props.userInfo.currentgames.length);
-    this.props.refreshUser();
-    
-    console.log(this.state);
+    this.props.getUser().then(newState => this.setState(newState));
   }
 
   createNewGame = ()=> {

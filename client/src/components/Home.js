@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Game from "./Game";
+import { Link } from 'react-router-dom';
 // import googlelogo2 from './googlelogo2.png';
 // import googlelogosvg from './googlelogo.svg';
 // import googlelogo from '../css/googlelogo.png';
@@ -12,8 +13,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    // const { history } = this.props;
-    // history.push("/thePath");
+    // this.props.setUrl && this.props.setUrl("/");
   }
 //
   render () {
@@ -29,10 +29,20 @@ class Home extends Component {
            <h1 className="title">Tongue Fu 😛</h1>
           </div>
           </div>
-          <div className="signupbutton">
-            <a href="/auth/google">
-            </a>
-          </div>
+          {
+            this.props.userInfo && this.props.userInfo._id ? (
+              <div className="goprofilebutton">
+                <Link to="/profile">
+                Go to Profile
+                </Link>
+              </div>
+            ) : (
+              <div className="signupbutton">
+                <a href="/auth/google">
+                </a>
+              </div>
+            )
+          }
         </div>
 
         <div className="over-second-section">
