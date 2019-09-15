@@ -26,4 +26,4 @@ def home():
             return json.dumps(a)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=3454)
+    app.run(debug=True)

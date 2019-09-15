@@ -44,8 +44,8 @@ class Input extends React.Component {
         var audioData = new FormData();
         audioData.append('', audioBlob, 'audio.webm');
 
-        // return fetch('https://tongue-fu.herokuapp.com/', {
-        return fetch('http://localhost:3454/', {
+        return fetch('https://tongue-fu.herokuapp.com/', {
+        // return fetch('http://localhost:3454/', {
           method: 'post',
           body: audioData,
         }).then(function(response) {
