@@ -20,30 +20,31 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.state);
-    this.getUser();
+    this.getUser().then(newState => this.setState(newState));
   }
 
 
   render() {
-    console.log(this.state.gameInfo);
     return (
       <div className="app">
         <NavBar userInfo={this.state.userInfo} logout={this.logout}/>
 
         <Switch>
           <Route exact path="/" render={(props) => (
-            <Home/>
+            <Home userInfo={this.state.userInfo}/>
           )}/>
           <Route exact path="/profile" render={(props) => (
             this.state.userInfo ? (
               <Profile {...props}
                 userInfo={this.state.userInfo}
-                refreshUser={this.getUser}
+                getUser={this.getUser}
                 game = {this.state.gameInfo}
               />
             ) : (
-              <Home/>
+              <Home 
+                userInfo={this.state.userInfo}
+                setUrl={this.setUrl}
+              />
             )
           )}/>
           <Route exact path="/game/:roomid" render={(props) => (
@@ -66,23 +67,26 @@ class App extends React.Component {
     })
   };
 
-  getUser = () => {
-    fetch('/api/whoami')
+  getUser = async () => {
+    return fetch('/api/whoami')
     .then(res => res.json())
     .then(
         userObj => {
             if (userObj._id !== undefined) {
-                this.setState({
+                return({
                     userInfo: userObj
                 });
-                // console.log(this.state.userInfo);
             } else {
-                this.setState({
+                return({
                     userInfo: null
                 });
             }
         }
     );
+  }
+
+  setUrl = (path) => {
+    this.props.history.push(path);
   }
 }
 

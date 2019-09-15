@@ -15,9 +15,7 @@ class Profile extends Component {
     // console.log(this.props.userInfo.name);
     // console.log(this.props.userInfo.totalscore);
     // console.log(this.props.userInfo.currentgames.length);
-    this.props.refreshUser();
-    
-    console.log(this.state);
+    this.props.getUser().then(newState => this.setState(newState));
   }
 
   createNewGame = ()=> {
@@ -53,15 +51,16 @@ class Profile extends Component {
     return (
       <div className="App-header">
         <div className="profile-header">
-          <div className="row">
-          <div className="col-sm-8">
+          <div className="row profile-row">
+          <div className="col-sm-12">
             <div className="welcome">Welcome, {this.props.userInfo.name}</div>
-            <div className="stats">Games 💪{this.props.userInfo.currentrooms.length}</div>
+            {/* <div className="stats">Games 💪{this.props.userInfo.currentrooms.length}</div> */}
           </div>
-
-          <div className="col-sm-4 play-column">
+          </div>
+          <div className="row profile-row">
+          <div className="col-sm-12 play-column">
             <div className="item">
-              <button type="button" className="btn btn-light" onClick={this.createNewGame}>Start a new game 🥋</button>
+              <button type="button" className="btn btn-light profile-btn" onClick={this.createNewGame}>Start a new game 🥋</button>
             </div>
             <div className="item">
               {this.state.joinPrompt ? (
@@ -69,12 +68,12 @@ class Profile extends Component {
                   <div className="input-group mb-3">
                     <input type="text" className="form-control" value={this.state.value} onChange={this.joinPromptChange} onBlur={this.joinPromptBlur} placeholder="Enter room code..."/>
                     <div className="input-group-append">
-                      <input type="submit" value="Join 💦" className="btn btn-outline" />
+                      <input type="submit" value="Join 💪" className="btn btn-outline" />
                     </div>
                   </div>
                 </form>
               ) : (
-                <button type="button" className="btn btn-light" onClick={this.openJoinPrompt}>Join a game ✊</button>
+                <button type="button" className="btn btn-light profile-btn" onClick={this.openJoinPrompt}>Join a game ✊</button>
               )}
             </div>
           </div>
