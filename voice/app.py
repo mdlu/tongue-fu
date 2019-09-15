@@ -9,6 +9,7 @@ UPLOAD_FOLDER = './audio'
 # ALLOWED_EXTENSIONS = {'webm'}
 
 app = Flask(__name__)
+cors = CORS(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/', methods=['GET', 'POST'])
@@ -38,7 +39,7 @@ def home():
 @cross_origin()
 def scoring():
     if request.method == 'GET':
-        return 
+        return
     else:
         if request.method == 'POST':
             file = request.files['']

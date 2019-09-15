@@ -4,14 +4,16 @@ import math
 from collections import Counter
 import numpy as np
 import textdistance
-
+import string
 # Look into https://github.com/bootphon/phonemizer
 
 def score(text):
     dic = pyphen.Pyphen(lang='en')
     syllables = []
     for word in text.lower().split(' '):
-        syllables.extend(dic.inserted(re.sub(r'\W+', '', word)).split('-'))
+        syllables.extend(dic.inserted(re.sub(r'\W+', '', word.translate(str.maketrans('', '', string.punctuation)))).split('-'))
+    
+    syllables = [x in syllables if x[0] in "abcdefghijlmnopqrstuvwyz"]
 
     homophones1 = {'k': 'c', 'x': 'z'}
     homophones2 = {'ph': 'f', 'ge': 'j', 'gi': 'j', 'ce': 's', 'gn': 'n', 'wr': 'r', 'ps': 's'}
