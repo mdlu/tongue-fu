@@ -37,10 +37,6 @@ class Input extends React.Component {
     mediaRecorder.addEventListener("stop", () => {
         const audioBlob = new Blob(audioChunks, {type: 'audio/webm'});
         // Send audio blob to be processed
-
-        console.log("i did it");
-        console.log(audioBlob.size);
-
         var audioData = new FormData();
         audioData.append('', audioBlob, 'audio.webm');
 
@@ -48,14 +44,14 @@ class Input extends React.Component {
         // return fetch('http://localhost:3454/', {
           method: 'post',
           body: audioData,
-        }).then(function(response) {
-          console.log(response);
-          return response.json();
-        }).then(function(data) {
-          console.log(data);
-          console.log("whas data");
-
-        })
+        }).then(
+          response => response.json()
+        ).then(
+          data => {
+            console.log(data);  
+            this.props.submit(data);
+          }
+        )
         .catch(error => console.error('Error:', error));
         
         // const audioUrl = URL.createObjectURL(audioBlob);
