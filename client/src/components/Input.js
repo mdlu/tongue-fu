@@ -7,6 +7,7 @@ class Input extends React.Component {
       super(props);
       this.state = {
         stream: null,
+        listenStatus: "off",
         // value: "",
         // numInputs: 0,
         // inputsArray: []
@@ -26,6 +27,9 @@ class Input extends React.Component {
     const recordButton = document.getElementById("record");
 
     const mediaRecorder = new MediaRecorder(this.state.stream);
+    this.setState({
+      listenStatus: "on"
+    })
     mediaRecorder.start();
 
     const audioChunks = [];
@@ -36,6 +40,9 @@ class Input extends React.Component {
 
     mediaRecorder.addEventListener("stop", () => {
         const audioBlob = new Blob(audioChunks, {type: 'audio/webm'});
+        this.setState({
+          listenStatus: "scoring"
+        })
         // Send audio blob to be processed
         var audioData = new FormData();
         audioData.append('', audioBlob, 'audio.webm');
@@ -86,9 +93,17 @@ class Input extends React.Component {
       <div className="promptInput">
         {
           this.state.stream ? (
-            <button id="record" className="btn btn-light" onClick={this.record}>Record Audio</button>
+            this.state.listenStatus == "off" ? (
+              <button id="record" className="btn btn-light" onClick={this.record}>Record Audio</button>
+            ) : (
+              this.state.listenStatus == "on" ? (
+                <button id="record" className="btn btn-light" disabled>Recording 🔴</button>
+              ) : (
+                <button id="record" className="btn btn-light" disabled>Scoring...</button>
+              )
+            )
           ) : (
-            <div></div>
+            <p className="instructions">Loading...</p>
           )
         }
       </div>
