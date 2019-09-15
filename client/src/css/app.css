@@ -192,6 +192,7 @@ text {
 
 .App-header {
   background-color: #282c34;
+  /* background-image: url("download.jpg"); */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -205,6 +206,11 @@ background-size: 400% 400%;
 -webkit-animation: AnimationName 30s ease infinite;
 -moz-animation: AnimationName 30s ease infinite;
 animation: AnimationName 30s ease infinite;
+}
+
+.App-header-new {
+  border: 0;
+  padding: 0;
 }
 
 .center{
@@ -788,6 +794,26 @@ margin-right: 6px;
 
 .row-here {
   height: 60px;
+}
+
+.new-row {
+  padding: 50px;
+}
+
+.row-white {
+  /* background-color: white; */
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.btn-new {
+  /* margin: 20%; */
+}
+
+.item-new{
+  margin: 5%;
 }
 
 .votesfor {

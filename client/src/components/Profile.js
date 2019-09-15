@@ -56,12 +56,12 @@ class Profile extends Component {
           <div className="row">
           <div className="col-sm-8">
             <div className="welcome">Welcome, {this.props.userInfo.name}</div>
-            <div className="stats">Games 🎯{this.props.userInfo.currentrooms.length} | Score 😛{this.props.userInfo.totalscore}</div>
+            <div className="stats">Games 💪{this.props.userInfo.currentrooms.length}</div>
           </div>
 
           <div className="col-sm-4 play-column">
             <div className="item">
-              <button type="button" className="btn btn-light" onClick={this.createNewGame}>Start a new game 💦</button>
+              <button type="button" className="btn btn-light" onClick={this.createNewGame}>Start a new game 🥋</button>
             </div>
             <div className="item">
               {this.state.joinPrompt ? (
@@ -74,14 +74,14 @@ class Profile extends Component {
                   </div>
                 </form>
               ) : (
-                <button type="button" className="btn btn-light" onClick={this.openJoinPrompt}>Join a game 💦</button>
+                <button type="button" className="btn btn-light" onClick={this.openJoinPrompt}>Join a game ✊</button>
               )}
             </div>
           </div>
           </div>
         </div>
 
-        <div>
+        {/* <div>
           <div className="divider">
             <h1>Your current games 💸</h1>
             <h3>Pick up where you left off.</h3>
@@ -91,7 +91,7 @@ class Profile extends Component {
               <CurrentGameCard roomid={room.roomid} room={room}/>
             )) }
           </div>
-        </div>
+        </div> */}
 
       </div>
     );
