@@ -42,14 +42,14 @@ class Input extends React.Component {
         console.log(audioBlob.size);
 
         var audioData = new FormData();
-        audioData.append('', audioBlob);
+        audioData.append('', audioBlob, 'audio.webm');
 
-        return fetch('https://tongue-fu.herokuapp.com/', {
+        // return fetch('https://tongue-fu.herokuapp.com/', {
+        return fetch('http://localhost:3454/', {
           method: 'post',
           body: audioData,
-          mode: 'no-cors', // 'cors' by default
         }).then(function(response) {
-          console.log(response)
+          console.log(response);
           return response.json();
         }).then(function(data) {
           console.log(data);
