@@ -4,28 +4,27 @@ class Input extends React.Component {
 
   constructor (props) {
       super(props);
-      // this.state = {
-      //   value: "",
-      //   numInputs: 0,
-      //   inputsArray: []
-      // };
+      this.state = {
+        stream: null,
+        // value: "",
+        // numInputs: 0,
+        // inputsArray: []
+      };
       // this.handleChange = this.handleChange.bind(this);
       // this.handleSubmit = this.handleSubmit.bind(this);
-
+    
+      navigator.mediaDevices.getUserMedia({ audio: true })
+      .then(audioStream => {
+          this.setState({
+            stream: audioStream
+          });
+      });
   }
 
-  record(){
-
+  record = () => {
     const recordButton = document.getElementById("record");
-    let stream = null;
 
-    navigator.mediaDevices.getUserMedia({ audio: true })
-    .then(stre => {
-        this.stream = stre;
-    });
-
-
-    const mediaRecorder = new MediaRecorder(stream);
+    const mediaRecorder = new MediaRecorder(this.state.stream);
     mediaRecorder.start();
 
     const audioChunks = [];
@@ -38,6 +37,26 @@ class Input extends React.Component {
         const audioBlob = new Blob(audioChunks, {type: 'audio/webm'});
         // Send audio blob to be processed
 
+        console.log("i did it");
+        console.log(audioBlob.size);
+
+        return fetch('https://tongue-fu.herokuapp.com/', {
+          method: 'post',
+          body: audioBlob,
+          mode: 'no-cors', // 'cors' by default
+          headers: {
+            'Accept': '*/*',
+            'Content-Type': 'multipart/form-data',
+            'Host': 'tongue-fu.herokuapp.com'
+          },
+        }).then(function(response) {
+          return response.json();
+        }).then(function(data) {
+          console.log(data);
+          console.log("whas data");
+
+        });
+        
         // const audioUrl = URL.createObjectURL(audioBlob);
         // const down = document.getElementById("download");
         // down.href = audioUrl;
@@ -68,7 +87,13 @@ class Input extends React.Component {
   render() {
     return (
       <div className="promptInput">
-        <button id="record" className="btn btn-light" onClick={this.record}>Record Audio</button>
+        {
+          this.state.stream ? (
+            <button id="record" className="btn btn-light" onClick={this.record}>Record Audio</button>
+          ) : (
+            <div></div>
+          )
+        }
       </div>
     )
     ;
