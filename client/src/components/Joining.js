@@ -38,7 +38,7 @@ class Joining extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="new-wrap">
       <div className = "top-bar">Getting your room set up 😛</div>
       <div className="joining">
         <div className="container">
