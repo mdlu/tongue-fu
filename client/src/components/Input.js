@@ -40,9 +40,12 @@ class Input extends React.Component {
         console.log("i did it");
         console.log(audioBlob.size);
 
+        var audioData = new FormData();
+        audioData.append('files', audioBlob, '');
+
         return fetch('https://tongue-fu.herokuapp.com/', {
           method: 'post',
-          body: audioBlob,
+          body: audioData,
           mode: 'no-cors', // 'cors' by default
           headers: {
             'Accept': '*/*',
