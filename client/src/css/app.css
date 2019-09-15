@@ -21,10 +21,17 @@ text {
 
 
 .app {
-  background-color: #272C34;
+  /* background-color: #272C34; */
+  background: linear-gradient( cyan, magenta);
   height: 100%;
   min-height: 100vh;
   overflow: hidden;
+
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 5s ease infinite;
+  -moz-animation: AnimationName 5s ease infinite;
+  animation: AnimationName 5s ease infinite;
+
 }
 
 .page {
@@ -243,6 +250,12 @@ animation: AnimationName 30s ease infinite;
   font-weight:400;
 }
 /* PROMPTING input */
+
+#record {
+  margin: 4vh;
+  font-size: 4vh;
+}
+
 .prompt {
   text-align: center;
 }
@@ -253,9 +266,10 @@ animation: AnimationName 30s ease infinite;
   margin: 60px;
 }
 .promptText, .input-text, .inputCard {
-  font-size: 5vw;
+  font-size: 8vw;
   font-weight: 800;
-  color: #86888C;
+  /* color: #86888C; */
+  color: black;
   line-height: 1.1;
 }
 .prompting form {

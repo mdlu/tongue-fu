@@ -68,7 +68,7 @@ class Input extends React.Component {
   render() {
     return (
       <div className="promptInput">
-        <button id="record" onClick={this.record}>Record Audio</button>
+        <button id="record" className="btn btn-light" onClick={this.record}>Record Audio</button>
       </div>
     )
     ;
