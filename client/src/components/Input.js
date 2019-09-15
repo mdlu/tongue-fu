@@ -70,7 +70,7 @@ class Input extends React.Component {
         // return 0
         // //
         
-        return fetch('https://tongue-fu.herokuapp.com/score', {
+        return fetch('http://tongue-fu.herokuapp.com/score', {
           method: 'post',
           body: audioData,
         }).then(
