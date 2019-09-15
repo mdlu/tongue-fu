@@ -3,6 +3,7 @@ import re
 import math
 from collections import Counter
 import numpy as np
+import textdistance
 
 # Look into https://github.com/bootphon/phonemizer
 
@@ -26,7 +27,7 @@ def score(text):
     initials = {i: 0 for i in "abcdefghijlmnopqrstuvwyz"}
     for s in syllables:
         initials[s[0]] += 1
-    #print(syllables)
+
     start = [s[0] for s in syllables]
     let = Counter(start)
     bonus = 0
@@ -38,7 +39,7 @@ def score(text):
                 syl_significant.append(syllables[i])
         except:
             pass
-    #print(syl_significant)
+
     syl_significant.append('?') # to make sure the last factorial is computed
     for i in range(len(syl_significant)-1):
         word1 = syl_significant[i]
@@ -54,4 +55,6 @@ def score(text):
     #print(bonus)
     return int(bonus + np.mean([let[l]**2 for l in let])/np.log(len(syl_significant)+10)*np.log(10))
 
-#print(score(input("your tongue twister: ")))
+def compare(orig, sample):
+    raw_sim = textdistance.editex.normalized_similarity(orig,sample)
+    return int(100*raw_sim)
