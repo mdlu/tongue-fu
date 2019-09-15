@@ -25,13 +25,13 @@ class Prompting extends React.Component {
   }
 
   dataSubmitV2 = (input) => {
-    fetch('/api/game/'+this.props.game.roomid+'/input', {
+    fetch('/api/game/'+this.props.game.roomid+'/inputv2', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        'input': input
+        'input': input,
       })
     });
   }
@@ -50,7 +50,12 @@ class Prompting extends React.Component {
       {/* <div className = "top-bar">Can you conquer inconstant consontants quickly? <span className="game-tracker">Team <span className="actualteamname">{this.props.game.teamname}</span>  |  Round 🎯<span className="actualteamname">{this.props.game.roundnumber}</span></span></div> */}
         <div className="prompting">
           <Prompt promptText={this.props.game.currentprompt}/>
-          <Input submit={this.submit}/>
+          <Input
+            submit={this.submit}
+            submitV2={this.dataSubmitV2}
+            userid={this.props.userInfo._id}
+            currentprompt={this.props.game.currentprompt}
+          />
         </div>
       </div>
     ) : (

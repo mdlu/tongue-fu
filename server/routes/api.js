@@ -147,7 +147,7 @@ router.post('/game/:roomid/maketeamname', (req,res)=> {
     sendRoomStateChange(req, room);
 
   });
-})
+});
 
 router.post('/game/:roomid/input', (req, res) => { //this
   let userInput = req.body.text;
@@ -165,6 +165,42 @@ router.post('/game/:roomid/input', (req, res) => { //this
     // req.room.gamestate = game.STATE_VOTE;
     req.room.gamestate = game.STATE_LEADERBOARD;
   }
+
+  req.room.save(function(err, room) {
+    res.send({});
+    sendRoomStateChange(req, room);
+  });
+});
+
+router.post('/game/:roomid/inputv2', (req, res) => { //this
+  let userInput = req.body.input;
+  console.log(userInput);
+  req.room.revResults.set(req.user._id, userInput["stripped_ts"]);
+  let calcScore = userInput["compare"]*userInput["orig_score"]*10;
+  console.log("score: " + calcScore);
+  req.room.scoreMap.set(req.user._id, calcScore);
+
+  // if this was the last user's input,
+  // advance to the next gamestate
+  allUsersSubmittedInput = true;
+  req.room.users.forEach( (user) => {
+    if (!(req.room.inputs.has(user.id) || user.id==req.user._id)) {
+      allUsersSubmittedInput = false;
+    }
+  })
+  if (allUsersSubmittedInput) {
+    req.room.users.forEach((user)=> {
+      let newlyEarnedScore = req.room.scoreMap.get(user.id);
+      user.totalscore += Number(newlyEarnedScore);
+      user.save((err, user) => {
+        if (err) console.log('error saving user', err);
+      });
+    })
+    // req.room.gamestate = game.STATE_VOTE;
+    req.room.gamestate = game.STATE_LEADERBOARD;
+  }
+
+  console.log(">>> now leaderboard")
 
   req.room.save(function(err, room) {
     res.send({});

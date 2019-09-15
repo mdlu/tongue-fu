@@ -46,21 +46,45 @@ class Input extends React.Component {
         // Send audio blob to be processed
         var audioData = new FormData();
         audioData.append('', audioBlob, 'audio.webm');
-        this.props.submit("{\"left\": \"twix\"}");
+        audioData.append("orig", this.props.currentprompt);
 
-        return fetch('https://tongue-fu.herokuapp.com/', {
-        // return fetch('http://localhost:3454/', {
+        // this.props.submit("{\"left\": \"twix\"}");
+
+        // return fetch('https://tongue-fu.herokuapp.com/', {
+        //   method: 'post',
+        //   body: audioData,
+        // }).then(
+        //   response => response.json()
+        // ).then(
+        //   data => {
+        //     console.log(data);  
+        //     this.props.submit(data);
+        //   }
+        // )
+        // .catch(error => console.error('Error:', error));
+
+
+        // // begin test data
+        // this.props.submitV2({"ts":"Speaker 0    00:00    It\'s Saturday, Sunday. \n","stripped_ts":"It\'s Saturday, Sunday.","compare":0.28,"orig_score":10,"orig":"peter piper picked a peck","userid":"5d7e49e3c8d5a2627c02ed19"});
+        
+        // return 0
+        // //
+        
+        return fetch('https://tongue-fu.herokuapp.com/score', {
           method: 'post',
           body: audioData,
         }).then(
           response => response.json()
         ).then(
           data => {
-            console.log(data);  
-            this.props.submit(data);
+            data.userid = this.props.userid;
+            console.log(data);
+            // this.props.submit(data);
+            this.props.submitV2(data);
           }
         )
         .catch(error => console.error('Error:', error));
+        
         
         // const audioUrl = URL.createObjectURL(audioBlob);
         // const down = document.getElementById("download");
