@@ -25,7 +25,7 @@ class Card extends React.Component {
             <div className="totalp">
               Total Score:
             </div>
-            <div className="totalVotes">😛{this.props.author.totalscore}</div>
+            <div className="totalVotes">😛{parseInt(this.props.author.totalscore, 10)}</div>
           </div>
           <div className="row row-here">
             <span className="quote">"{this.props.text}"</span>

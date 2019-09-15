@@ -203,6 +203,7 @@ router.post('/game/:roomid/inputv2', (req, res) => { //this
   console.log(">>> now leaderboard")
 
   req.room.save(function(err, room) {
+    req.room.gamestate = game.STATE_LEADERBOARD;
     res.send({});
     sendRoomStateChange(req, room);
   });
