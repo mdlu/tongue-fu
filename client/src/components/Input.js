@@ -50,7 +50,6 @@ class Input extends React.Component {
           data => {
             console.log(data);  
             this.props.submit(data);
-            // this.props.submit("peter piper");
           }
         )
         .catch(error => console.error('Error:', error));
