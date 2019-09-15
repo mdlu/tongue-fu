@@ -46,9 +46,22 @@ class Input extends React.Component {
         // Send audio blob to be processed
         var audioData = new FormData();
         audioData.append('', audioBlob, 'audio.webm');
+        audioData.append("orig", "peter piper picked a peck");
 
-        return fetch('https://tongue-fu.herokuapp.com/', {
-        // return fetch('http://localhost:3454/', {
+        // return fetch('https://tongue-fu.herokuapp.com/', {
+        //   method: 'post',
+        //   body: audioData,
+        // }).then(
+        //   response => response.json()
+        // ).then(
+        //   data => {
+        //     console.log(data);  
+        //     this.props.submit(data);
+        //   }
+        // )
+        // .catch(error => console.error('Error:', error));
+        
+        return fetch('https://tongue-fu.herokuapp.com/score', {
           method: 'post',
           body: audioData,
         }).then(
@@ -56,10 +69,11 @@ class Input extends React.Component {
         ).then(
           data => {
             console.log(data);  
-            this.props.submit(data);
+            this.props.submit(data['stripped_ts']);
           }
         )
         .catch(error => console.error('Error:', error));
+        
         
         // const audioUrl = URL.createObjectURL(audioBlob);
         // const down = document.getElementById("download");
