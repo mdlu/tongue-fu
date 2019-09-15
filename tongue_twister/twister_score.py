@@ -4,6 +4,8 @@ import math
 from collections import Counter
 import numpy as np
 
+# Look into https://github.com/bootphon/phonemizer
+
 def score(text):
     dic = pyphen.Pyphen(lang='en')
     syllables = []
