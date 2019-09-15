@@ -32,7 +32,7 @@ def scoring():
 
             compare = twister_score.compare(orig, stripped_ts)
             # a = int(twister_score.compare(orig, sample) * twister_score.score(orig) * 10) # multiplies accuracy by the difficulty of the tongue twister, and scales by 10
-            return json.dumps({"ts": ts, "stripped_ts": stripped_ts, "compare": compare, "orig_score": orig_score})
+            return json.dumps({"ts": ts, "stripped_ts": stripped_ts, "compare": compare, "orig_score": orig_score, "orig": orig})
 
 
 @app.route('/', methods=['GET', 'POST'])
