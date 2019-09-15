@@ -24,6 +24,8 @@ text {
 
 .app {
   /* background: linear-gradient( cyan, magenta); */
+  background-color: #1D2126;
+
   height: 100%;
   min-height: 100vh;
   overflow: hidden;
@@ -414,6 +416,9 @@ animation: AnimationName 30s ease infinite; */
   text-align: center;
   justify-content: center;
 } */
+.joining {
+  background: #282c34;
+}
 .joining img {
   border: solid 10px #9b3658;
   border-radius: 55px;
@@ -738,27 +743,32 @@ text-align: center;
     100%{background-position:0% 15%}
 }
 
+.new-wrap {
+  background-color: #1D2126;
+
+}
+
 .top-bar {
   background-color: #1D2126;
   display: flex;
   border-radius: 20px;
   margin: 15px;
-  color: #F8F9FA;
+  /* color: #F8F9FA; */
   font-size: 16px;
   font-weight: 350;
   color: white;
   line-height: 1.1;
   padding: 20px 0px 20px 40px;
-  box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+  /* box-shadow: 10px 10px 30px rgba(0,0,0,0.5); */
 
   /* background: linear-gradient(119deg, #282c34, #9b3658); */
-  background-image: url("/client/src/css/download.jpg");
+  /* background-image: url("/client/src/css/download.jpg");
 
   background-size: 400% 400%;
 
   -webkit-animation: AnimationName 18s ease infinite;
   -moz-animation: AnimationName 18s ease infinite;
-  animation: AnimationName 18s ease infinite;
+  animation: AnimationName 18s ease infinite; */
 }
 .votess {
   font-weight:400px;
