@@ -479,6 +479,7 @@ animation: AnimationName 30s ease infinite;
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 500;
+  margin-top: 10vh;
 }
 .profile-header .stats {
   margin-top: 1rem;
@@ -487,6 +488,14 @@ animation: AnimationName 30s ease infinite;
 .play-column .item {
   margin-bottom: 10px;
   line-height: 1;
+}
+
+.profile-btn {
+  padding: 3vh 6vh;
+  font-size: 4vh;
+  border-radius: 20px;
+  margin-top: 10vh;
+  width: 50vh;
 }
 
 .profile-body {
