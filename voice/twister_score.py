@@ -57,4 +57,4 @@ def score(text):
 
 def compare(orig, sample):
     raw_sim = textdistance.editex.normalized_similarity(orig,sample)
-    return int(100*raw_sim)
+    return raw_sim

@@ -293,8 +293,8 @@ animation: AnimationName 30s ease infinite; */
 .promptText, .input-text, .inputCard {
   font-size: 8vw;
   font-weight: 800;
-  /* color: #86888C; */
-  color: black;
+  color: #86888C;
+  /* color: black; */
   line-height: 1.1;
 }
 .prompting form {

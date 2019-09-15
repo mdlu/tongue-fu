@@ -23,14 +23,14 @@ class Card extends React.Component {
           </div>
           <div className="row row-here">
             <div className="totalp">
-              All-Time HotTakes:
+              Total Score:
             </div>
             <div className="totalVotes">😛{this.props.totalVotes}</div>
           </div>
           <div className="row row-here">
             <span className="quote">"{this.props.text}"</span>
           </div>
-          <div className="row row-here">
+          {/* <div className="row row-here">
               <div className="votesfor">
                 {(this.props.usersThatVoted ? (
                   this.props.usersThatVoted.map(user => (
@@ -43,7 +43,7 @@ class Card extends React.Component {
                   <div>No votes for you, sorry! </div>
                 ))}
               </div>
-          </div>
+          </div> */}
           </div>
         </div>
       </div>

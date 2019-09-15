@@ -73,19 +73,19 @@ class Game extends React.Component {
           return (
             <Waiting />
           );
-        // case 3:
-        //   return (
-        //     <Vote
-        //       game={this.state.game}
-        //       userInfo={this.props.userInfo}
-        //       users={this.state.game.users}
-        //     />
-        //   );
-        // case 4:
-        //   return (
-        //     <Waiting />
-        //   );
         case 3:
+          return (
+            <Vote
+              game={this.state.game}
+              userInfo={this.props.userInfo}
+              users={this.state.game.users}
+            />
+          );
+        case 4:
+          return (
+            <Waiting />
+          );
+        case 5:
           return (
             <LeaderBoard
               game={this.state.game}

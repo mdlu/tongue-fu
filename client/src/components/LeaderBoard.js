@@ -18,11 +18,31 @@ class LeaderBoard extends React.Component {
     var cards = {}; // {'userid': {card}}
 
     Object.keys(this.props.game.inputs).forEach( (userid) => {
+
+      // part for Richard to code pls --- queries the backend to score the words spoken
+
+      // var scored = fetch('https://tongue-fu.herokuapp.com/score', {
+      //   method: 'post',
+      //   body: {
+      //     'orig': this.props.game.currentprompt,
+      //     'sample': this.props.game.inputs[userid]
+      //   },
+      // }).then(
+      //   response => response.json()
+      // ).then(
+      //   data => {
+      //     console.log(data);  
+      //     // this.props.submit(data);
+      //   }
+      // )
+      // .catch(error => console.error('Error:', error));
+  
       cards[userid] = {
         userid: userid,
         author: this.props.getUser(userid),
         text: this.props.game.inputs[userid],
         votesThisRound: 0,
+        // votesThisRound: scored, // supposed to be the scored thing above
         totalVotes: this.props.game.score[userid],
         usersThatVoted: []
       }

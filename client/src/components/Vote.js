@@ -62,7 +62,7 @@ class Vote extends React.Component {
   render() {
     return (this.waitingOnUser(this.props.userInfo._id) ? (
       <div>
-        <div className = "top-bar">Time to judge your friends humor 😎 <span className="game-tracker">Team <span className="actualteamname">{this.props.game.teamname}</span>  |  Round 🎯<span className="actualteamname">{this.props.game.roundnumber}</span></span></div>
+        <div className = "top-bar">Look through all answers! <span className="game-tracker">Team <span className="actualteamname">{this.props.game.teamname}</span>  |  Round ✊<span className="actualteamname">{this.props.game.roundnumber}</span></span></div>
         <div className="vote">
           <Prompt promptText={this.props.game.currentprompt}/>
           <div className="cardHolder">
@@ -85,11 +85,11 @@ class Vote extends React.Component {
       </div>
     ) : (
       <div>
-        <div className = "top-bar">Waiting on delinquents 🤦‍♂️... <span className="game-tracker">Team <span className="actualteamname">{this.props.game.teamname}</span>  |  Round 🎯<span className="actualteamname">{this.props.game.roundnumber}</span></span></div>
+        <div className = "top-bar">Waiting for all players to advance... <span className="game-tracker">Team <span className="actualteamname">{this.props.game.teamname}</span>  |  Round 🎯<span className="actualteamname">{this.props.game.roundnumber}</span></span></div>
         <Waiting
           users={this.props.users}
           waitingOnUser={this.waitingOnUser}
-          message="Got your vote. Waiting for all ballots to roll in..."
+          message="Waiting for all players to advance..."
         />
       </div>
     ));
