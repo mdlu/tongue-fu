@@ -13,6 +13,8 @@ html {
 body {
     margin: 0;
     height: 100%;
+    background-image: url("/client/src/css/download.jpg");
+
 }
 
 text {
@@ -21,10 +23,11 @@ text {
 
 
 .app {
-  background: linear-gradient( cyan, magenta);
+  /* background: linear-gradient( cyan, magenta); */
   height: 100%;
   min-height: 100vh;
   overflow: hidden;
+  background-image: url("/client/src/css/download.jpg");
 
   background-size: 600% 600%;
   -webkit-animation: AnimationName 5s ease infinite;
@@ -34,7 +37,9 @@ text {
 }
 
 .page {
-  background: linear-gradient( cyan, magenta);
+  /* background: linear-gradient( cyan, magenta); */
+  background-image: url("/client/src/css/download.jpg");
+
   background-size: 600% 600%;
 
   -webkit-animation: AnimationName 5s ease infinite;
@@ -86,7 +91,7 @@ text {
   font-size: 5vw;
   padding: 5vw;
   /* color: #1D2126; */
-  /* background-color: white; */
+  background-color: white;
   /* border: none; */
   /* border-radius: 2vw; */
   resize: none;
@@ -113,7 +118,7 @@ text {
   font-size: 5vw;
   padding: 5vw;
   /* color: #86888C; */
-  /* background-color: white; */
+  background-color: white;
   /* border: none; */
   /* border-radius: 2vw; */
   transition: 0.2rem 0.8rem 1.6rem 300ms;
@@ -227,7 +232,7 @@ text {
 
 .App-header {
   background-color: #282c34;
-  /* background-image: url("download.jpg"); */
+  background-image: url("/client/src/css/download.jpg");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -235,12 +240,12 @@ text {
   /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
-  background: linear-gradient(109deg, #953556, #46264c);
-background-size: 400% 400%;
-
+  /* background: linear-gradient(109deg, #953556, #46264c); */
+/* background-size: 400% 400%; */
+/* 
 -webkit-animation: AnimationName 30s ease infinite;
 -moz-animation: AnimationName 30s ease infinite;
-animation: AnimationName 30s ease infinite;
+animation: AnimationName 30s ease infinite; */
 }
 
 .App-header-new {
@@ -486,7 +491,9 @@ line-height: 1.1;
 .profile-header {
   background-color: #282c34;
   padding: 0 60px;
-  background: linear-gradient(109deg, #953556, #46264c);
+  /* background: linear-gradient(109deg, #953556, #46264c); */
+  /* background-image: url("/client/src/css/download.jpg") repeat 0 0; */
+
 background-size: 400% 400%;
 
 -webkit-animation: AnimationName 30s ease infinite;
@@ -521,7 +528,7 @@ animation: AnimationName 30s ease infinite;
 }
 
 .profile-body {
-  background-color: #1D2126;
+  /* background-color: #1D2126; */
   width: 100%;
   padding: 60px;
   height: 80%;
@@ -744,7 +751,9 @@ text-align: center;
   padding: 20px 0px 20px 40px;
   box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
 
-  background: linear-gradient(119deg, #282c34, #9b3658);
+  /* background: linear-gradient(119deg, #282c34, #9b3658); */
+  background-image: url("/client/src/css/download.jpg");
+
   background-size: 400% 400%;
 
   -webkit-animation: AnimationName 18s ease infinite;
