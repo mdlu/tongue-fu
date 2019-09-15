@@ -115,7 +115,7 @@ router.post('/game/:roomid/join', (req, res) => {
   if (userids_in_room.indexOf(req.user._id)>=0) {
     console.log('This room already has this user in it!');
   } else {
-    req.room.users.push(req.user._id);
+    req.room.users.push(req.user._id); 
     req.room.score.set(req.user._id, 0);
     req.room.save((err, room) => {
         res.send({}); //sends the fact that Jamie joined to jamie
