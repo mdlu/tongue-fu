@@ -1,4 +1,5 @@
 import React from "react";
+import { request } from "https";
 
 class Input extends React.Component {
 
@@ -41,24 +42,21 @@ class Input extends React.Component {
         console.log(audioBlob.size);
 
         var audioData = new FormData();
-        audioData.append('files', audioBlob, '');
+        audioData.append('', audioBlob);
 
         return fetch('https://tongue-fu.herokuapp.com/', {
           method: 'post',
           body: audioData,
           mode: 'no-cors', // 'cors' by default
-          headers: {
-            'Accept': '*/*',
-            'Content-Type': 'multipart/form-data',
-            'Host': 'tongue-fu.herokuapp.com'
-          },
         }).then(function(response) {
+          console.log(response)
           return response.json();
         }).then(function(data) {
           console.log(data);
           console.log("whas data");
 
-        });
+        })
+        .catch(error => console.error('Error:', error));
         
         // const audioUrl = URL.createObjectURL(audioBlob);
         // const down = document.getElementById("download");
