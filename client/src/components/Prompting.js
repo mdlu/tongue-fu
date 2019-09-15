@@ -35,7 +35,7 @@ class Prompting extends React.Component {
   render() {
     return (this.waitingOnUser(this.props.userInfo._id) ? (
       <div>
-      <div className = "top-bar">Can you conquer inconstant consontants quickly? <span className="game-tracker">Team <span className="actualteamname">{this.props.game.teamname}</span>  |  Round 🎯<span className="actualteamname">{this.props.game.roundnumber}</span></span></div>
+      {/* <div className = "top-bar">Can you conquer inconstant consontants quickly? <span className="game-tracker">Team <span className="actualteamname">{this.props.game.teamname}</span>  |  Round 🎯<span className="actualteamname">{this.props.game.roundnumber}</span></span></div> */}
         <div className="prompting">
           <Prompt promptText={this.props.game.currentprompt}/>
           <Input onSubmit={this.submit}/>

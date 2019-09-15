@@ -21,9 +21,9 @@ class Home extends Component {
       <div className="page">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
         <div className="first-section">
-          <div className="display-card-with-slogan">
-           <h1 className="slogan">Tussles till tongues twists, turns, twit and twat.</h1>
-          </div>
+          {/* <div className="display-card-with-slogan">
+           <h1 className="slogan"> Tongue be nimble, tongue be quick.</h1>
+          </div> */}
           <div className="hover-box">
           <div className="display-card-with-title">
            <h1 className="title">Tongue Fu 😛</h1>
@@ -44,26 +44,7 @@ class Home extends Component {
             )
           }
         </div>
-
-        <div className="over-second-section">
-          <div className="second-section">
-              <div className="row centering">
-                <div className="col-sm-4 column-padding">
-                  <div className="section-header">Sign in.</div>
-                  <span className="section-text">The first step is always easy. If you can't do it, consult a doctor, do not even attempt this game. Bye felicia. 👋</span>
-                </div>
-                <div className="col-sm-4 column-padding">
-                  <div className="section-header">Team up.</div>
-                  <span className="section-text"> Unleash your inner savage by roasting your friends, reveal the skeletons in your closet, and lead your friends astray with bad advice. </span>
-                </div>
-                <div className="col-sm-4 column-padding">
-                  <div className="section-header">Get busy.</div>
-                  <span className="section-text">We mean it. Life does not revolve around games. Luckily, HotTake's quick gaming sessions let you pick up right where you left off.</span>
-                </div>
-              </div>
-          </div>
-        </div>
-
+        
         <div className="footer">
           <span>&copy; HackMIT 2019. All Rights Reserved.</span>
         </div>

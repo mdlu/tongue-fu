@@ -39,20 +39,21 @@ class Joining extends React.Component {
   render() {
     return (
       <div>
-      <div className = "top-bar">Getting your team set up 👯</div>
+      <div className = "top-bar">Getting your room set up 😛</div>
       <div className="joining">
         <div className="container">
           <div className="row">
             <div className="col-sm-7">
               <div className="teamname">
-                <span>Team </span>
-                {(this.props.isHost ? (
+                <span>Your Room</span>
+                {/* {(this.props.isHost ? (
                   <input type="text" className="teamname-input" placeholder="Name" value={this.state.teamname} onChange={this.handleChangeTeamName} onBlur={this.handleBlurTeamName}/>
                 ) : (
                   this.props.game.teamname
-                ))}</div>
-              <div className="your-team"> Your team room code is <span className="roomid">{this.props.game.roomid}</span></div>
-              <div className="joined-players">Joined players</div>
+                ))} */}
+                </div>
+              <div className="your-team"> Your room code is <span className="roomid">{this.props.game.roomid}</span></div>
+              <div className="joined-players">Current Players</div>
               <div>
                 <div className="joiner-photo">{this.props.game.users.map((user) => (<img src={user.photo} />))}</div>
                 <div className="joiners">{this.props.game.users.map(u => u.name).join(",\n")}</div>
@@ -61,12 +62,12 @@ class Joining extends React.Component {
             <div className="col-sm-5 start-game">
               {(this.props.isHost ? (
                 <div>
-                  <p className="instructions">Hit start when all have joined.</p>
-                  <button className="btn btn-light" onClick={this.startGame}>Start Game 💦</button>
+                  <p className="instructions">Click start to begin the game.</p>
+                  <button className="btn btn-light" onClick={this.startGame}>Start 😛</button>
                 </div>
               ) : (
                 <div className="instructions">
-                  Waiting on host to start game...
+                  Waiting for host...
                 </div>
               ))}
             </div>
