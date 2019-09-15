@@ -33,12 +33,12 @@
 
                 mediaRecorder.addEventListener("stop", () => {
                     print("stopping");
-                    const audioBlob = new Blob(audioChunks, {type: 'audio/wav'});
+                    const audioBlob = new Blob(audioChunks, {type: 'audio/webm'});
                     const audioUrl = URL.createObjectURL(audioBlob);
                     //createAudioElement(audioUrl);
                     const down = document.getElementById("download");
                     down.href = audioUrl;
-                    down.download = "test_audio.wav";
+                    down.download = "test_audio.webm";
                 });
 
                 setTimeout(() => {
@@ -49,7 +49,7 @@
             navigator.mediaDevices.getUserMedia({ audio: true })
                 .then(stre => {
                     stream = stre;
-                });
+            });
 
         </script>
 
