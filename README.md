@@ -1,6 +1,11 @@
 # hackmit19
+```bash
+# Functional website:
+https://tonguefu2.herokuapp.com
+```
 
 ```bash
+# To run locally
 # This will probably not work until you get .env from the guy.
 npm install
 # For the frontend
